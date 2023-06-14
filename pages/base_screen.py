@@ -23,12 +23,15 @@ class BaseScreen:
     def is_visible(self, locator) -> bool:
         try:
             return self._wait(locator).is_displayed()
-        except Exception:
-            return False
+        except Exception as e:
+            print("The element is not found", e)
 
     # clicks
     def click(self, locator):
-        self._wait(locator).click()
+        try:
+            self._wait(locator).click()
+        except Exception as e:
+            print("The element cannot be clicked", e)
 
     def device_back(self):
         return self.driver.press_keycode(4)
@@ -38,8 +41,8 @@ class BaseScreen:
         try:
             sleep(1)
             self.driver.hide_keyboard()
-        except WebDriverException:
-            pass
+        except WebDriverException as e:
+            print("The keyboard is not hidden", e)
 
     def send_keys(self, locator, text):
         self._wait(locator).send_keys(text)

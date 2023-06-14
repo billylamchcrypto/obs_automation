@@ -1,12 +1,12 @@
-from page.disclaimer_page import Disclaimer
-from page.privacy_policy_statements_page import PrivacyPolicyStatements
-from page.background_location_access_page import BackgroundLocationAccess
-from page.device_location_access_page import DeviceLocationAccess
-from page.privacy_policy_statements_page import PrivacyPolicyStatements
-from page.traffic_info_tutorial_page import TrafficInfoTutorial
-from page.whats_new_page import WhatsNew
-from page.home_page import Home
-from page.nine_days_forecast_page import NineDaysForecast
+from pages.disclaimer_page import Disclaimer
+from pages.privacy_policy_statements_page import PrivacyPolicyStatements
+from pages.background_location_access_page import BackgroundLocationAccess
+from pages.device_location_access_page import DeviceLocationAccess
+from pages.privacy_policy_statements_page import PrivacyPolicyStatements
+from pages.traffic_info_tutorial_page import TrafficInfoTutorial
+from pages.whats_new_page import WhatsNew
+from pages.home_page import Home
+from pages.nine_days_forecast_page import NineDaysForecast
 
 
 class Pages:

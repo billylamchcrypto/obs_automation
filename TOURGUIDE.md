@@ -14,6 +14,8 @@ All the bdd steps are saved in this file
 ## page file (e.g: home.page.py)
 
 All the elements and saved here and each of them is called by different utilities I set up in base screen
+
+I learn the go function from the main project that I can quickly go to this highly reused page by using terminate app and reopen app. But I comment the go function here because we do not need at this moment
 ```python
 class Home(BaseScreen):
 
@@ -31,6 +33,10 @@ class Home(BaseScreen):
 
     def open_menu_bar(self):
         self.click(self.MENU_BAR)
+    
+        def go(self):
+        self.driver.terminate_app(CONFIG[platform]['appPackage'])
+        self.driver.activate_app(CONFIG[platform]['appPackage'])
 ```
 
 
@@ -85,7 +91,7 @@ def in_disclaimer_page(pages: Pages):
 @when('the user clicks Agree button on the disclaimer page')
 def clicks_agree_button_on_the_disclaimer_page(pages: Pages):
     try:
-        pages.disclaimer.disclaimer_agree()
+        pages.disclaimer.click_disclaimer_agree()
         print("User agrees the disclaimer")
 
     except NoSuchElementException as e:

@@ -7,7 +7,6 @@ Please run the poetry command to install the package:
 ```shell
 poetry install
 ```
-*You can create a new poetry python interpreter before running this project
 ## Input the information you want in method test_forecast()
 
 config.yml

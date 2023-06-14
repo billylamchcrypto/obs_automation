@@ -1,6 +1,6 @@
 from hamcrest import assert_that
 
-from page.base_screen import BaseScreen
+from pages.base_screen import BaseScreen
 
 
 class WhatsNew(BaseScreen):
@@ -10,6 +10,8 @@ class WhatsNew(BaseScreen):
 
     def whats_new_here(self):
         assert_that(self.is_visible(self.WHATS_NEW_TITLE), "Failed to go to the Privacy Policy Statements page")
+        print("The user is redirected to the whats new page")
 
-    def whats_new_next(self):
+    def click_whats_new_next(self):
         self.click(self.NEXT_BUTTON)
+        print("The user click next in the whats new page")

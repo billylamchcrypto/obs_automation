@@ -1,6 +1,6 @@
 from hamcrest import assert_that
 
-from page.base_screen import BaseScreen
+from pages.base_screen import BaseScreen
 
 
 class DeviceLocationAccess(BaseScreen):
@@ -12,15 +12,17 @@ class DeviceLocationAccess(BaseScreen):
 
     def device_location_access_here(self):
         assert_that(self.is_visible(self.DEVICE_LOCATION_ACCESS_TITLE), "failed reason")
+        print("The user is redirected to the Device location access page")
 
-    def device_location_access_allow(self):
+    def click_device_location_access_allow(self):
         self.click(self.ALLOW_BUTTON)
+        print("The user clicks Allow only while using the app in Device Location Access page")
 
     def device_location_access_alltime_here(self):
-        self.is_visible(self.DEVICE_LOCATION_ACCESS_ALLTIME_TITLE)
         assert_that(self.is_visible(self.DEVICE_LOCATION_ACCESS_ALLTIME_TITLE), "failed reason")
+        print("The user is redirected to the Device location access page with time factor")
 
-    def device_location_access_allow_all_time(self):
+    def click_device_location_access_allow_all_time(self):
         self.click(self.ALLOW_ALL_TIME_BUTTON)
 
 # aos element only for AOS version 12
@@ -32,16 +34,21 @@ class DeviceLocationAccess(BaseScreen):
     def new_device_location_access_here(self):
         self.is_visible(self.NEW_LOCATION_ACCESS_TITLE)
         assert_that(self.is_visible(self.NEW_LOCATION_ACCESS_TITLE), "Failed to go to The Device location access page")
+        print("The user is redirected to the Device location access page")
 
-    def while_using_the_app(self):
+    def click_while_using_the_app(self):
         self.click(self.WHILE_USING_THE_APP)
+        print("The user clicks Allow only while using the app in Device Location Access page")
 
     def location_permission_here(self):
         self.is_visible(self.LOCATION_PERMISSION_TITLE)
         assert_that(self.is_visible(self.LOCATION_PERMISSION_TITLE), "Failed to go to the location permission page")
+        print("The user is redirected to the location permission page")
 
-    def back_in_location_permission(self):
+    def click_back_in_location_permission(self):
         self.click(self.BACK)
+        print("The user clicks the back button")
 
-    def clicks_device_back(self):
+    def click_device_back(self):
         self.device_back()
+        print("The user clicks the back button")

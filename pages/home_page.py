@@ -1,5 +1,5 @@
 from hamcrest import assert_that
-from page.base_screen import BaseScreen
+from pages.base_screen import BaseScreen
 from settings import *
 
 
@@ -11,10 +11,12 @@ class Home(BaseScreen):
     MENU_CONTAINER = ('xpath', '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout')
 
     def home_here(self):
-        assert_that(self.is_visible(self.HOME_TITLE), "Failed to go to the Home page")
+        assert_that(self.is_visible(self.HOME_TITLE), "Failed to go to the Home pages")
+        print("the user is redirected to the Home page")
 
-    def open_menu_bar(self):
+    def click_menu_bar(self):
         self.click(self.MENU_BAR)
+        print("the menu bar is opened")
 
     def go(self):
         self.driver.terminate_app(CONFIG[platform]['appPackage'])
@@ -23,5 +25,6 @@ class Home(BaseScreen):
     def scroll_menu_bar(self):
         self.scrolling(self.MENU_CONTAINER, self.NINE_DAYS_FORECAST)
 
-    def select_nine_days_forecast(self):
+    def click_nine_days_forecast(self):
         self.click(self.NINE_DAYS_FORECAST)
+        print("the user selects the 9 Days Forecast")

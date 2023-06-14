@@ -1,5 +1,5 @@
 import pytest
-from page import Pages
+from pages import Pages
 from settings import*
 from appium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait

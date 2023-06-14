@@ -1,6 +1,6 @@
 from hamcrest import assert_that
 
-from page.base_screen import BaseScreen
+from pages.base_screen import BaseScreen
 
 
 class NineDaysForecast(BaseScreen):
@@ -9,3 +9,4 @@ class NineDaysForecast(BaseScreen):
 
     def nine_days_forecast_here(self):
         assert_that(self.is_visible(self.NINE_DAYS_FORECAST_TITLE), "Failed to go to the 9-Days Forecast page")
+        print("the user is in the 9 Days Forecast page")
