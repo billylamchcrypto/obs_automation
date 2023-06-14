@@ -85,7 +85,8 @@ FAILED
 E       AssertionError: Failed to go to The Device location access page
 ```
 
-* And you will get the allure record in the files allure_report. You can use brew install allure in your mac terminal.
+* And you will get the allure record in the files allure_report. You can use **brew install allure** in your mac terminal.
+* Then create a folder under this project called the name you want such as **allure_report**
 * Then Run the command to check the report of this test
 ```shell
 allure serve <path of this project/>allure_report
