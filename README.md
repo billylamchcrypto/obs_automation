@@ -48,7 +48,7 @@ My first version is developed through AOS 9, but I found that some Android page 
 Therefore, I made a change on it. Now it is developed based on AOS 12. 
 ## Run the file
 ```shell
-poetry run pytest test/test_weather_forecast.py -vs
+poetry run pytest --alluredir=allure_report test/test_weather_forecast.py -vs
 ```
 You will get the correct result like this. Every action it did will be recorded here
 ```output
@@ -83,4 +83,10 @@ User agrees background location access
 FAILED
 
 E       AssertionError: Failed to go to The Device location access page
+```
+
+* And you will get the allure record in the files allure_report. You can use brew install allure in your mac terminal.
+* Then Run the command to check the report of this test
+```shell
+allure serve <path of this project/>allure_report
 ```
