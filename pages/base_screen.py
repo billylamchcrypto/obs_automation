@@ -69,9 +69,8 @@ class BaseScreen:
                 pass
 
     # ios method is not used in this homework
-    def ios_scroll(self, locator):
-        el = self._wait(locator)
-        self.driver.execute_script('mobile: scroll', {"element": el, "toVisible": True})
+    def ios_scroll(self, locator, target_locator):
+        raise NotImplementedError
 
     # redirect to different method according to your os
     def scrolling(self, container_locator, target_locator):

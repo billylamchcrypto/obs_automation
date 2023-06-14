@@ -48,14 +48,14 @@ My first version is developed through AOS 9, but I found that some Android page 
 Therefore, I made a change on it. Now it is developed based on AOS 12. 
 ## Run the file
 ```shell
-pytest test/test_weather_forecast.py -vs
+poetry run pytest test/test_weather_forecast.py -vs
 ```
 You will get the correct result like this. Every action it did will be recorded here
 ```output
 Disclaimer page is opened
 User agrees the disclaimer
 User is redirected to the Privacy Policy Statements page
-User agrees the Privacy Policy Statements
+User agrees the Privacy Policy Statements 
 The user is redirected to the Background Access to Location Information page
 User agrees background location access
 The user is redirected to the Device location access page
