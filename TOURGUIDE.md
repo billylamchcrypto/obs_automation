@@ -80,22 +80,17 @@ Then swipe from the middle point to the upper position. I am using a for loop he
 ```python
 @given('the user is in Disclaimer page')
 def in_disclaimer_page(pages: Pages):
-    try:
-        pages.disclaimer.disclaimer_here()
-        print("\nDisclaimer page is opened")
-
-    except NoSuchElementException as e:
-        print("Failed", e)
+    pages.disclaimer.disclaimer_here()
 
 
 @when('the user clicks Agree button on the disclaimer page')
 def clicks_agree_button_on_the_disclaimer_page(pages: Pages):
-    try:
-        pages.disclaimer.click_disclaimer_agree()
-        print("User agrees the disclaimer")
+    pages.disclaimer.click_disclaimer_agree()
 
-    except NoSuchElementException as e:
-        print("Failed", e)
+
+@then('the user is redirected to the Privacy Policy Statements page')
+def in_privacy_policy_statements_page(pages: Pages):
+    pages.privacy_policy_statements.statements_here()
 ```
 
 ## test_weather_forecast.py
